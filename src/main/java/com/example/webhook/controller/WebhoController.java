@@ -7,17 +7,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.security.SecureRandom;
-import java.sql.SQLOutput;
-
 @RestController
 @RequestMapping("/api/webhook")
 public class WebhoController {
 
     @PostMapping
-    public ResponseEntity<String> WebNotification(@RequestBody String requestBody){
+    public ResponseEntity<Object> WebNotification(@RequestBody Object requestBody){
         System.out.println("*****   Web Hook Notification   *****" + requestBody);
-        return new ResponseEntity<String>(requestBody, HttpStatus.OK);
+        return new ResponseEntity<Object>(requestBody, HttpStatus.OK);
     }
     @PostMapping("/abc")
     public ResponseEntity<String> WebNotification(){
