@@ -19,4 +19,9 @@ public class WebhoController {
         System.out.println("*****   Web Hook Notification   *****" + requestBody);
         return new ResponseEntity<String>(requestBody, HttpStatus.OK);
     }
+    @PostMapping("/abc")
+    public ResponseEntity<String> WebNotification(){
+        System.out.println("*****   Web Hook Notification   *****" );
+        return new ResponseEntity<String>("Running", HttpStatus.OK);
+    }
 }
